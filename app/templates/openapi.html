@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Purpose Management API - OpenAPI 3.1 Documentation</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swagger-ui-dist@5.9.0/swagger-ui.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        .swagger-ui .topbar {
+            background-color: #1b1b1b;
+        }
+        .swagger-ui .info .title {
+            color: #333;
+        }
+        .swagger-ui .info h2 {
+            font-weight: bold;
+            color: #3b4151;
+        }
+        .swagger-ui .scheme-container {
+            background-color: #f7f7f7;
+        }
+    </style>
+</head>
+<body>
+    <div id="swagger-ui"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/swagger-ui-dist@5.9.0/swagger-ui-bundle.js"></script>
+    <script>
+        window.onload = function() {
+            const ui = SwaggerUIBundle({
+                url: "/api/openapi.json",
+                dom_id: "#swagger-ui",
+                deepLinking: true,
+                presets: [
+                    SwaggerUIBundle.presets.apis,
+                    SwaggerUIBundle.SwaggerUIStandalonePreset
+                ],
+                layout: "BaseLayout",
+                docExpansion: "list",
+                defaultModelsExpandDepth: 1,
+                defaultModelExpandDepth: 1,
+                syntaxHighlight: {
+                    activated: true,
+                    theme: "agate"
+                },
+                supportedSubmitMethods: ["get", "put", "post", "delete", "options", "head", "patch"],
+                validatorUrl: null,  // Disable validation for OpenAPI 3.1 support
+                filter: true,
+                displayOperationId: true
+            });
+            window.ui = ui;
+        };
+    </script>
+</body>
+</html>
